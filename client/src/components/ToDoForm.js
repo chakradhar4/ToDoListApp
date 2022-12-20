@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { addNewToDo } from "../redux/actions";  
+
 const ToDoForm = () => {
   const [text,setText] =useState("")
 
   
 
- const onFormSubmit = () => {};
+ const onFormSubmit = (e) => {
+  e.preventDefault();
+  dispatch(addNewToDo());
+ };
   
   const onInputChange = (e) => {
     console.log(e.target.value);
